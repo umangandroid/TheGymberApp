@@ -18,9 +18,10 @@ fun ImageView.loadImage(url: String) {
     circularProgressDrawable.strokeWidth = 5f
     circularProgressDrawable.centerRadius = 30f
     circularProgressDrawable.start()
-    val requestOptions = RequestOptions()
-    requestOptions.placeholder(circularProgressDrawable)
-    requestOptions.error(R.drawable.baseline_error_24)
+    val requestOptions = RequestOptions().apply {
+        placeholder(circularProgressDrawable)
+        error(R.drawable.baseline_error_24)
+    }
 
     Glide
         .with(this.context)
@@ -28,7 +29,6 @@ fun ImageView.loadImage(url: String) {
         .load(url)
         .centerCrop()
         .transition(DrawableTransitionOptions.withCrossFade())
-        /*.placeholder(circularProgressDrawable)*/
         .into(this)
 
 

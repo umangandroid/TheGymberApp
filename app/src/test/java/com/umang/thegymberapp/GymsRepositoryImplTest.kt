@@ -19,7 +19,7 @@ import org.junit.Test
 @ExperimentalCoroutinesApi
 class GymsRepositoryImplTest {
     private lateinit var gymRepositoryImpl: GymRepositoryImpl
-    val fakeRepository = FakeRepository()
+    private val fakeRepository = FakeRepository()
 
     @Before
     fun setup() {
@@ -41,7 +41,7 @@ class GymsRepositoryImplTest {
 
     @Test
     fun getMatchedGymTest() = runBlocking{
-        gymRepositoryImpl.matchOrRejectGym(fakeRepository.getFormattedResponse().get(0),Direction.Right)
+        gymRepositoryImpl.matchOrRejectGym(fakeRepository.getFormattedResponse()[0],Direction.Right)
         val resultFlow = gymRepositoryImpl.getMatchedGyms()
         val resultValue = resultFlow.first()
         Truth.assertThat(resultValue.size).isEqualTo(1)

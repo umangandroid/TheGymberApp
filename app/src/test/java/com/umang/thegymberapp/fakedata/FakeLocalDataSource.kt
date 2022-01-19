@@ -5,7 +5,7 @@ import com.umang.thegymberapp.data.db.GymDb
 
 class FakeLocalDataSource :LocalDataSource {
     private val fakeRepository = FakeRepository()
-    val response = fakeRepository.getFormattedResponse()
+    private val response = fakeRepository.getFormattedResponse()
     override fun getGyms(): List<GymDb> {
         return fakeRepository.getFormattedResponse()
     }

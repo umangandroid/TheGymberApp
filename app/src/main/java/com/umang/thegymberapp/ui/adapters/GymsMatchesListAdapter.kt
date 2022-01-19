@@ -9,7 +9,7 @@ import com.umang.thegymberapp.data.db.GymDb
 import com.umang.thegymberapp.databinding.ItemGymMatchBinding
 
 /**
- * Adapte class for GymsMatchesListFragment
+ * Adapter class for GymsMatchesListFragment
  *
  */
 class GymsMatchesListAdapter :
