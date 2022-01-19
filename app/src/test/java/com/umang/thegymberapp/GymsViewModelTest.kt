@@ -49,24 +49,6 @@ class GymsViewModelTest {
         )
     }
 
-   /* @Test
-    fun verifyDistanceAddedInGymObject() = runBlocking {
-        viewModel.getGyms(true)
-        delay(1000)
-        val location = Location("")
-        location.latitude = 23.4
-        location.longitude = 34.4
-        viewModel.onRequestPermissionResult(GRANTED,location)
-        val gymResults = viewModel.gymResults.first()
-        assertThat(gymResults?.get(0)?.name).isEqualTo(
-            "A ZUMBODY"
-        )
-        assertThat(gymResults?.get(0)?.address).isEqualTo(
-            "Teun de Jagerdreef Utrecht 3561 JK"
-        )
-        assertThat(gymResults?.get(0)?.distance).isEqualTo(
-            "3345 Miles"
-        )
-    }*/
+
 
 }
