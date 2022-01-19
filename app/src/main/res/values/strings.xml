@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">The Gymber App</string>
+    <string name="unable_to_connect">Unable to connect to remote server</string>
+    <string name="miles">Miles</string>
+    <string name="gym_matches">Gym Matches</string>
+    <string name="no_matches_found">No matches found yet</string>
+    <string name="match_found">Congratulations\n\nIt\'s a Match</string>
+</resources>

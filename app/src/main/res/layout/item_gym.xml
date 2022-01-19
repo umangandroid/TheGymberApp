@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="gym"
+            type="com.umang.thegymberapp.data.db.GymDb" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/overlay"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/screen_bg"
+        app:cardCornerRadius="@dimen/dp_8"
+        android:elevation="@dimen/dp_8"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            app:image="@{gym.url}" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/image_overlay"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{gym.name}"
+                android:textColor="@android:color/white"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{gym.address}"
+                android:textColor="@android:color/white"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/white"
+                android:visibility="@{gym.distance.empty?View.GONE:View.VISIBLE}"
+                android:text="@{gym.distance}"
+                />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/left_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/action_overlay">
+
+            <ImageView
+                android:layout_width="@dimen/image_size"
+                android:layout_height="@dimen/image_size"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_cancel_36" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/right_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/action_overlay">
+
+            <ImageView
+                android:layout_width="@dimen/image_size"
+                android:layout_height="@dimen/image_size"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_favorite_24" />
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
